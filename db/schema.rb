@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150910155324) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
+    t.integer  "total_yardage"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

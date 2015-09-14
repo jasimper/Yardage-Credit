@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150910155324) do
   end
 
   create_table "yarns", force: :cascade do |t|
+    t.string   "name"
     t.integer  "plied_yardage"
     t.integer  "num_of_plies"
     t.integer  "yardage_credit"

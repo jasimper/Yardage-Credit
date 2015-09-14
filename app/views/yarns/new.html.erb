@@ -1,7 +1,7 @@
 <h1>Add Yarn!</h1>
 
 <%= form_for :yarn, url: '/yarns' do |f| %>
-
+  Name/Yarn Description: <%= f.text_field :name %>
   Plied Yardage: <%= f.number_field :plied_yardage %>
   Number of Plies: <%= f.number_field :num_of_plies %>
   <!-- Yardage Credit <%= f.number_field :yardage_credit %> -->

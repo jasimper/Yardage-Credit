@@ -50,7 +50,7 @@ class YarnsController < ApplicationController
   private
 
   def yarn_params
-    params.require(:yarn).permit(:user_id, :plied_yardage, :num_of_plies, :yardage_credit)
+    params.require(:yarn).permit(:user_id, :name, :plied_yardage, :num_of_plies, :yardage_credit)
   end
 
   def get_yarn

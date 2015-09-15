@@ -17,8 +17,6 @@ class YarnsController < ApplicationController
     @yarn = current_user.yarns.new(yarn_params)
     if @yarn.save
       total_all
-      # @total_yardage = (Yarn.where(user_id: @yarn.user_id).sum(:yardage_credit))
-      # User.find_by(id: @yarn.user_id).update_attributes(total_yardage: @total_yardage)
       redirect_to yarns_path
     else
       render :new

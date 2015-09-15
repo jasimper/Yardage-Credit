@@ -1,1 +1,20 @@
-<h1>hello</h1>
+<h1>Current Handspun</h1>
+<h3>  <%= link_to 'Add new handspun?', new_yarn_path %> </h3>
+
+
+
+<ul class="yarn__list">
+    <% @yarns.each do |y| %>
+      <li>
+        <%= y.name %>
+      -
+        <%= y.plied_yardage %>
+      -
+        <%= y.num_of_plies %>
+      -
+        <%= y.yardage_credit %>
+      -
+        <%= link_to 'Show', yarn_path(y) %>
+    <% end %>
+  </ul>
+  <%= @current_user.total_yardage %>

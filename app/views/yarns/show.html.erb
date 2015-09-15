@@ -1,0 +1,14 @@
+<ul class="lists">
+    <li>
+      <%= @yarn.name %>
+    -
+      <%= @yarn.plied_yardage %>
+    -
+      <%= @yarn.num_of_plies %>
+    -
+      <%= @yarn.yardage_credit %>
+    -
+      <%= link_to 'Edit', edit_yarn_path(@yarn.id) %>
+    -
+      <%= link_to 'Delete',  @yarn,  method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>

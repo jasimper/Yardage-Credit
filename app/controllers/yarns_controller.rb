@@ -16,8 +16,7 @@ class YarnsController < ApplicationController
   def create
     @yarn = current_user.yarns.new(yarn_params)
     if @yarn.save
-      @total_yardage = (Yarn.where(user_id: @yarn.user_id).sum(:yardage_credit))
-      User.find_by(id: @yarn.user_id).update_attributes(total_yardage: @total_yardage)
+      total_all
       redirect_to yarns_path
     else
       render :new
@@ -35,7 +34,8 @@ class YarnsController < ApplicationController
   def update
     @yarn = get_yarn
     if @yarn.update_attributes(yarn_params)
-      redirect_to @yarn
+      total_all
+      redirect_to yarns_path
     else
       render :edit
     end
@@ -44,17 +44,23 @@ class YarnsController < ApplicationController
   def destroy
     @yarn = get_yarn
     @yarn.destroy
+    total_all
     redirect_to yarns_path
   end
 
   private
 
   def yarn_params
-    params.require(:yarn).permit(:user_id, :plied_yardage, :num_of_plies, :yardage_credit)
+    params.require(:yarn).permit(:user_id, :name, :plied_yardage, :num_of_plies, :yardage_credit)
   end
 
   def get_yarn
     current_user.yarns.find(params[:id])
+  end
+
+  def total_all
+    @total_yardage = (Yarn.where(user_id: @yarn.user_id).sum(:yardage_credit))
+    User.find_by(id: @yarn.user_id).update_attributes(total_yardage: @total_yardage)
   end
 
 end

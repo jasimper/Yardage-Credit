@@ -1,6 +1,7 @@
 class CreateYarns < ActiveRecord::Migration
   def change
     create_table :yarns do |t|
+      t.string  :name
       t.integer :plied_yardage
       t.integer :num_of_plies
       t.integer :yardage_credit

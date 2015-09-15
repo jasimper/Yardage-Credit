@@ -14,7 +14,7 @@
       -
         <%= y.yardage_credit %>
       -
-      </li>
+        <%= link_to 'Show', yarn_path(y) %>
     <% end %>
   </ul>
   <%= @current_user.total_yardage %>

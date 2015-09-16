@@ -1,9 +1,28 @@
+<h1>Edit Your Previously Added Handspun</h1>
+<h3>  <%= link_to 'Or add new handspun?', new_yarn_path %> </h3>
+
 <%= form_for :yarn, url: yarn_path, method: :patch do |f| %>
 
-  Name/Yarn Description: <%= f.text_field :name %>
-  Plied Yardage: <%= f.number_field :plied_yardage %>
-  Number of Plies: <%= f.number_field :num_of_plies %>
-
-  <%= f.submit "Submit" %>
-
+  <div class="table">
+    <div class="table__row">
+      <div class="table__head">Name/Description</div>
+      <div class="table__head">Measured Yardage</div>
+      <div class="table__head">Number of Plies</div>
+      <div class="table__head">Save Yarn</div>
+    </div>
+    <div class="table__row">
+      <div class="table__cell">
+        <%= f.text_field :name %>
+      </div>
+      <div class="table__cell">
+        <%= f.number_field :plied_yardage %>
+      </div>
+      <div class="table__cell">
+        <%= f.number_field :num_of_plies %>
+      </div>
+      <div class="table__cell">
+        <%= f.submit "Submit" %>
+      </div>
+    </div>
+  </div>
 <% end %>

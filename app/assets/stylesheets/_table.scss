@@ -1,0 +1,21 @@
+.table{
+  display: table;
+  width:80%;
+  border-collapse:collapse;
+  margin: 0 auto;
+}
+  .table__row{
+    display: table-row;
+  }
+    .table__cell, .table__head{
+      display: table-cell;
+      padding:1em;
+      border:#f0f0f0 1px solid;
+    }
+    .table__head{
+        font-weight:bold;
+        background-color: #EEEEEE;
+    }
+    .table__row:nth-child(odd) {
+      background-color: #CCCCCC;
+    }

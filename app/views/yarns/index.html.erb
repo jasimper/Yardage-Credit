@@ -1,14 +1,19 @@
 <h1>Current Handspun</h1>
 <h3>  <%= link_to 'Add new handspun?', new_yarn_path %> </h3>
+<% if @yarns.length == 0 %>
+<div class="no_yarns">
+  You currently have no handspun added. Please add your Spinzilla spinning now to get your current total.
+</div>
 
+<% else %>
 <div class="table">
   <div class="table__row">
-    <div class="table__head">Name/Description</div>
-    <div class="table__head">Measured Yardage</div>
-    <div class="table__head">Number of Plies</div>
-    <div class="table__head">Yardage Credit</div>
-    <div class="table__head">Edit Yarn</div>
-    <div class="table__head">Delete Yarn</div>
+    <div class="table__head  table__40">Name/Description</div>
+    <div class="table__head  table__20">Measured Yardage</div>
+    <div class="table__head  table__10">Number of Plies</div>
+    <div class="table__head  table__10">Yardage Credit</div>
+    <div class="table__head  table__10">Edit</div>
+    <div class="table__head  table__10">Delete</div>
   </div>
   <% @yarns.each do |y| %>
   <div class="table__row">
@@ -36,3 +41,4 @@
 <div class="table">
   <h3>Total Spinzilla Yardage: <%= @current_user.total_yardage %></h3>
 </div>
+<% end %>

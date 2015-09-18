@@ -2,10 +2,14 @@ class YarnsController < ApplicationController
   before_filter :authorize
 
   def index
-    if current_user
-      @yarns = current_user.yarns
-    else
-      redirect_to '/login'
+    respond_to do |format|
+      if current_user
+        format.html { @yarns = current_user.yarns }
+        format.json { render json: current_user.yarns }
+      else
+        format.html { redirect_to '/login' }
+        format.json { render json: @yarn.errors, status: 422 }
+      end
     end
   end
 
@@ -15,16 +19,24 @@ class YarnsController < ApplicationController
 
   def create
     @yarn = current_user.yarns.new(yarn_params)
-    if @yarn.save
-      total_all
-      redirect_to yarns_path
-    else
-      render :new
+    respond_to do |format|
+      if @yarn.save
+        total_all
+        format.html { redirect_to yarns_path }
+        format.json { render json: {}, status: 201 }
+      else
+        format.html { render :new }
+        format.json { render json: @yarn.errors, status: 422 }
+      end
     end
   end
 
   def show
     @yarn = get_yarn
+    respond_to do |format|
+      format.html
+      format.json { render json: @yarn }
+    end
   end
 
   def edit
@@ -33,11 +45,15 @@ class YarnsController < ApplicationController
 
   def update
     @yarn = get_yarn
-    if @yarn.update_attributes(yarn_params)
-      total_all
-      redirect_to yarns_path
-    else
-      render :edit
+    respond_to do |format|
+      if @yarn.update_attributes(yarn_params)
+        total_all
+        format.html { redirect_to yarns_path }
+        format.json { render json: {}, status: 201 }
+      else
+        format.html { render :edit }
+        format.json { render json: @yarn.errors, status: 422 }
+      end
     end
   end
 
@@ -45,7 +61,10 @@ class YarnsController < ApplicationController
     @yarn = get_yarn
     @yarn.destroy
     total_all
-    redirect_to yarns_path
+    respond_to do |format|
+      format.html { redirect_to yarns_path  }
+      format.json { render json: {}, status: 200 }
+    end
   end
 
   private

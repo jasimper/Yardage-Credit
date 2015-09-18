@@ -14,6 +14,7 @@ class Yarn < ActiveRecord::Base
   end
 
 
-  validates :plied_yardage, :num_of_plies, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :plied_yardage, :num_of_plies, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+  validates :num_of_plies, numericality: { less_than_or_equal_to: 12 }
   validates :name, :plied_yardage, :num_of_plies, presence: true
 end

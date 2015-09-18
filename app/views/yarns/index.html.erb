@@ -30,15 +30,17 @@
       <%= y.yardage_credit %>
     </div>
     <div class="table__cell">
-      <%= link_to 'Edit', edit_yarn_path(y) %>
+      <%= link_to '[edit]', edit_yarn_path(y) %>
     </div>
     <div class="table__cell">
-      <%= link_to 'Delete',  y,  method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to '[delete]',  y,  method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
   <% end %>
 </div>
 <div class="table">
-  <h3>Total Spinzilla Yardage: <%= @current_user.total_yardage %></h3>
+  <div class="table__cell total">
+  <h2>Total Spinzilla Yardage: <%= @current_user.total_yardage %></h2>
+  </div>
 </div>
 <% end %>

@@ -1,19 +1,20 @@
 require 'test_helper'
 
 class YarnsControllerTest < ActionController::TestCase
- def setup
+  def setup
    @yarn = yarns(:one)
    @user = users(:one)
    @yarn.update_attributes(user_id: @user.id)
- end
+  end
 
- test "GET index" do
-   current_user = @user
-   get :index
-   assert_equal current_user.yarns.count, 1
- end
+  test "GET index" do
+    current_user = @user
+    get :index
+    assert_equal current_user.yarns.count, 1
+  end
 
- test "GET new" do
+  test "GET new" do
+    current_user = @user
     get :new
     assert_instance_of Yarn, assigns(:yarn)
     assert_response :success

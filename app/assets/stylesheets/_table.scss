@@ -3,6 +3,7 @@
   width: 80%;
   border-collapse: collapse;
   margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .table__row {
   display: table-row;
@@ -14,11 +15,11 @@
 }
 .table__head {
     font-weight: bold;
-    background-color: #EEEEEE;
+    background-color: rgba(238, 238, 238, 0.7);
     border-bottom: 1px #808080 solid;
 }
 .table__row:nth-child(odd) {
-  background-color: #EEEEEE;
+  background-color: rgba(238, 238, 238, 0.7);
 }
 .table__40 {
   width: 40%;
@@ -31,4 +32,23 @@
 }
 .table__cell #yarn_name {
   width: 90%;
+}
+.total {
+  text-align: right;
+}
+.submit__link {
+  background-color: inherit;
+  border: 0;
+  font-size: 1em;
+  color: #444444;
+  padding: 0 0 1px 0;
+}
+.submit__link:hover {
+  border-bottom: 1px solid;
+}
+.errors {
+  background-color: rgba(238, 238, 238, 0.8);
+  margin: 10px auto;
+  width: 80%;
+  padding: 20px;
 }

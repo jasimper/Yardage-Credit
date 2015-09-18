@@ -1,6 +1,13 @@
 <h1>Add Yarn!</h1>
 
 <%= form_for :yarn, url: '/yarns' do |f| %>
+  <% if @yarn.errors.full_messages.present? %>
+    <ul class="errors">
+      <% @yarn.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <div class="table">
   <div class="table__row">
     <div class="table__head table__40">Name/Description</div>
@@ -19,20 +26,17 @@
       <%= f.number_field :num_of_plies %>
     </div>
     <div class="table__cell">
-      <%= f.submit "Submit" %>
+      <%= f.submit "[add yarn]", class: "submit__link" %>
     </div>
   </div>
 </div>
 <% end %>
 <div class="spinzilla__rules">
   <h4> Please be sure to read the plying credit rules below before adding new handspun.</h4>
-  <p>From Spinzilla's website:
+  <p>From <a href="http://www.spinzilla.org/" target="_blank">Spinzilla</a>'s website:
     <blockquote>
       <p>Can I ply my yarn?</p>
 <p>All yarn must be spun during Spinzilla—singles and plied yarn. If you choose to ply your yarn during Spinzilla, we will give you credit for the plying! Plying is “spinning” and measuring plied yarn is easier than measuring singles yarn. This is totally optional—you don’t have to ply your yarn at all.</p>
-<p>Here is how to calculate your total yardage that you will submit for Spinzilla credit:</p>
-<p>Measure your plied yarn using a method that you are comfortable with and record this number. Multiply this number by the number of plies. This is your singles yardage Add these two numbers together for your total yardage credit.
-For example, if you spin two bobbins of singles and then ply them into a 2-ply yarn that measures 1,000 yards, you would be given credit for 3,000 yards. 1,000 yards for the plied yarn + 2,000 yards for singles that made up that yarn.</p>
 <p>The formula works like this:</p>
 <p>[plied yardage] + [plied yardage x # of plies] = yardage for which you can claim credit</p>
 <p>Chain or Navajo ply is a 3-ply yarn.</p>

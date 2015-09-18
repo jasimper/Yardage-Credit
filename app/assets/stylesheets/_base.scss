@@ -1,3 +1,6 @@
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro);
+
 html {
   box-sizing: border-box;
 }
@@ -8,9 +11,45 @@ html {
 }
 html,
 body {
-  font-family: Helvetica, Helvetica Neue, Arial, sans-serif;;
+  font-family: 'Maven Pro', Helvetica Neue, Arial, sans-serif;;
   font-size: 16px;
   line-height: 20px;
+  color: #333333;
   margin: 0;
   height: 100%;
+  background-image: url('yarn.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+.main {
+  padding: 10px;
+}
+h1, h3 a {
+  color: #FFFFFF;
+}
+a {
+  text-decoration: none;
+  color: #444444;
+  &:hover {
+    border-bottom: 1px solid;
+  }
+}
+.spinzilla__rules {
+  width: 80%;
+  background-color: rgba(238, 238, 238, 0.8);
+  padding: 20px;
+  margin: 20px auto;
+}
+.header {
+  background-color: rgba(238, 238, 238, 0.8);
+  padding-left: 10px;
+}
+.home__link img {
+  width: 30px;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+.home__link:hover {
+  border-bottom: none;
 }

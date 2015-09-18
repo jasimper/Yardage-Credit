@@ -53,3 +53,17 @@ a {
 .home__link:hover {
   border-bottom: none;
 }
+.login__signup {
+  background-color: rgba(238, 238, 238, 0.8);
+  margin: 10px 50px;
+  width: 30%;
+  padding: 20px;
+  font-size: 1.2rem;
+  list-style-type: none;
+}
+.form__input input {
+  width: 80%;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  margin: 5px 0 10px 0;
+}

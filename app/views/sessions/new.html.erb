@@ -1,9 +1,10 @@
 <h1>Login</h1>
-
+<ul class="login__signup">
 <%= form_tag '/login' do %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+  <li>Email: </li><li class="form__input"><%= text_field_tag :email %></li>
+  <li>Password: </li><li class="form__input"><%= password_field_tag :password %></li>
+  <li><%= submit_tag "[log in]", class: "submit__link" %></li>
 
 <% end %>
+</ul>

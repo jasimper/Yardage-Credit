@@ -13,6 +13,10 @@
   padding: 1em;
   border: #f0f0f0 1px solid;
 }
+.table__cell input {
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
 .table__head {
     font-weight: bold;
     background-color: rgba(238, 238, 238, 0.7);
@@ -39,6 +43,7 @@
 .submit__link {
   background-color: inherit;
   border: 0;
+  border:1px solid transparent;
   font-size: 1em;
   color: #444444;
   padding: 0 0 1px 0;
@@ -47,6 +52,12 @@
   border-bottom: 1px solid;
 }
 .errors {
+  background-color: rgba(238, 238, 238, 0.8);
+  margin: 10px auto;
+  width: 80%;
+  padding: 20px;
+}
+.no__yarns {
   background-color: rgba(238, 238, 238, 0.8);
   margin: 10px auto;
   width: 80%;

@@ -1,10 +1,16 @@
 <h1>Login</h1>
+<div class="login">
 <ul class="login__signup">
 <%= form_tag '/login' do %>
 
-  <li>Email: </li><li class="form__input"><%= text_field_tag :email %></li>
+  <li>Username: </li><li class="form__input"><%= text_field_tag :username %></li>
   <li>Password: </li><li class="form__input"><%= password_field_tag :password %></li>
   <li><%= submit_tag "[log in]", class: "submit__link" %></li>
 
 <% end %>
 </ul>
+</div>
+<div class="welcome">
+  <h2> Welcome to Yardage Credit Tracker.</h2>
+    <p>If you are a new user, please head over to the <%= link_to 'Signup Page', '/signup' %> to start tracking your Spinzilla yardage!</p>
+</div>

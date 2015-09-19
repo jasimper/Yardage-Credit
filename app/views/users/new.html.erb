@@ -1,12 +1,17 @@
 <h1>Signup!</h1>
+<div class="signup">
 <ul class="login__signup">
 <%= form_for :user, url: '/users' do |f| %>
 
   <li>Username: </li><li class="form__input"><%= f.text_field :username %></li>
-  <li>Email: </li><li class="form__input"><%= f.text_field :email %></li>
   <li>Password: </li><li class="form__input"><%= f.password_field :password %></li>
   <li>Password Confirmation: </li><li class="form__input"><%= f.password_field :password_confirmation %></li>
   <li><%= f.submit "[sign up]", class: "submit__link" %></li>
 
 <% end %>
 </ul>
+</div>
+<div class="welcome">
+  <h2> Welcome to Yardage Credit Tracker.</h2>
+    <p>This is a tool to help calculate and track your yardage credit for <a href="http://www.spinzilla.org" target="_blank">Spinzilla</a>. To use the site, just sign up with a username and password. Then you can start adding your handspun. It will be saved and a running total will be calculated for you so you can calculate throughout the week or save all measuring until the end. Happy spinning and good luck!</p>
+</div>

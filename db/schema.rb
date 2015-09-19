@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20150910155324) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.string   "email"
     t.string   "password_digest"
     t.integer  "total_yardage"
     t.datetime "created_at",      null: false

@@ -1,0 +1,9 @@
+<div class="header">
+  <% if current_user %>
+  <%= link_to image_tag('home.png'), root_path, class: 'home__link' %>
+
+    Welcome to Yardage Credit Tracker, <%= current_user.username %> | <%= link_to '[logout]', '/logout' %>
+  <% else %>
+    <%= link_to '[login]', '/login' %> | <%= link_to '[signup]', '/signup' %>
+  <% end %>
+</div>

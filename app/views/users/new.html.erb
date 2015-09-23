@@ -1,7 +1,11 @@
 <h1>Signup!</h1>
 <div class="signup">
+
 <ul class="login__signup">
-<%= form_for :user, url: '/users' do |f| %>
+  <% if flash[:notice] %>
+    <div class="errors"><%= flash[:notice] %></div>
+  <% end %>
+  <%= form_for :user, url: '/users' do |f| %>
 
   <li>Username: </li><li class="form__input"><%= f.text_field :username %></li>
   <li>Password: </li><li class="form__input"><%= f.password_field :password %></li>

@@ -23,13 +23,18 @@ body {
   background-size: cover;
 }
 .main {
-  padding: 10px;
+  min-height: 100%;
+  position: relative;
+}
+.content {
+  padding: 10px 20px 50px 20px;
 }
 h1, h3 a {
   color: #FFFFFF;
 }
 a {
   text-decoration: none;
+  border-bottom: 1px solid transparent;
   color: #444444;
   &:hover {
     border-bottom: 1px solid;
@@ -40,19 +45,6 @@ a {
   background-color: rgba(238, 238, 238, 0.8);
   padding: 20px;
   margin: 20px auto;
-}
-.header {
-  background-color: rgba(238, 238, 238, 0.8);
-  padding-left: 10px;
-}
-.home__link img {
-  width: 30px;
-  vertical-align: middle;
-  padding-bottom: 5px;
-  padding-right: 5px;
-}
-.home__link:hover {
-  border-bottom: none;
 }
 .login, .signup {
   display: inline-block;

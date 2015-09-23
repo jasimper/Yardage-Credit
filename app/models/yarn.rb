@@ -15,6 +15,7 @@ class Yarn < ActiveRecord::Base
 
 
   validates :plied_yardage, :num_of_plies, numericality: { greater_than_or_equal_to: 1, only_integer: true }
-  validates :num_of_plies, numericality: { less_than_or_equal_to: 12 }
+  validates :num_of_plies, numericality: { less_than_or_equal_to: 12, message: "Number of Plies must be less than or equal to 12." }
+  validates :plied_yardage, numericality: { less_than_or_equal_to: 10000, message: "Measured Yardage cannot be greater than 10000." }
   validates :name, :plied_yardage, :num_of_plies, presence: true
 end

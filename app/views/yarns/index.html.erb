@@ -1,8 +1,11 @@
 <h1>Current Handspun</h1>
-<h3>  <%= link_to 'Add new handspun?', new_yarn_path %> </h3>
+<h3>  <%= link_to new_yarn_path do %>
+  <i class="fa fa-plus-circle"></i>&nbsp;Add new handspun?
+  <% end %>
+</h3>
 <% if @yarns.length == 0 %>
 <div class="no__yarns">
-  You currently have no handspun added. Please <%= link_to 'add', new_yarn_path %> your Spinzilla spinning now to get your current total.
+  <p>You currently have no handspun added. Please <%= link_to 'add', new_yarn_path %> your Spinzilla spinning now to get your current total.</p>
 </div>
 
 <% else %>
@@ -39,6 +42,13 @@
   <% end %>
 </div>
 <div class="table">
+  <div class="table__cell table__40">
+    <h2>
+    <%= link_to new_yarn_path do %>
+    <i class="fa fa-plus-circle"></i>&nbsp;Add new handspun?
+    <% end %>
+    </h2>
+  </div>
   <div class="table__cell total">
   <h2>Total Spinzilla Yardage: <%= @current_user.total_yardage %></h2>
   </div>

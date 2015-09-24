@@ -2,12 +2,14 @@
   background-color: rgba(238, 238, 238, 0.8);
   padding-left: 10px;
 }
-.home__link img {
+.home__link {
   width: 30px;
+  font-size: 1.5rem;
   vertical-align: middle;
   padding-bottom: 5px;
   padding-right: 5px;
 }
 .home__link:hover {
   border-bottom: none;
+  color: #660066;
 }

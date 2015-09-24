@@ -1,6 +1,8 @@
 <h1>Edit Your Previously Added Handspun</h1>
-<h3>  <%= link_to 'Or add new handspun?', new_yarn_path %> </h3>
-
+<h3>  <%= link_to new_yarn_path do %>
+  <i class="fa fa-plus-circle"></i>&nbsp;Add new handspun?
+  <% end %>
+</h3>
 <%= form_for :yarn, url: yarn_path, method: :patch do |f| %>
   <% if @yarn.errors.full_messages.present? %>
     <ul class="errors">

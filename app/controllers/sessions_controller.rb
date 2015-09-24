@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      redirect_to '/login'
+      redirect_to '/login', notice: "Your log in info is not valid."
     end
   end
 
